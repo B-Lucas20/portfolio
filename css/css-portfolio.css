@@ -13,13 +13,16 @@
 
 html{        
     scroll-behavior: smooth;
+    background-image: url(../images/background2.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: #3f4a3c;
 }
 
 body{
     margin: 0%;
-    background-image: url(../images/background2.jpg);
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    box-sizing: border-box;
+
 }
 
 /****NAVBAR STYLING****/
@@ -29,7 +32,7 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 9;
+    z-index: 5;
     -webkit-animation: moveNavbar;
     animation: moveNavbar 3s;
 }
@@ -40,7 +43,7 @@ body{
 
 }
 
-.navbar a{
+.navbar a {
     float: left;
     display: block;
     color: white;
@@ -53,6 +56,7 @@ body{
     position: relative;
     -webkit-animation: NavText 10s;
     animation: NavText 10s;
+    user-select: none;
 }
 
 @keyframes NavText{
@@ -64,6 +68,7 @@ body{
     background-color: #21361c;
     color: wheat;
     font-weight: 700;
+    cursor: pointer;
 }
 
 
@@ -78,7 +83,7 @@ body{
 .nameBL h2{
     margin-top: 1em;
     line-height: 1;
-    font-size: 9em;
+    font-size: 10vw;
     font-family: "Chakra Petch", serif;
     font-weight: 300;
     color: transparent;
@@ -119,14 +124,13 @@ body{
 .column-1{
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 5%;
-    height: 425px;
+    padding: 2%;
+    height: 600px;
     background-color: rgba(63, 74, 60, .9);
 }
 
 h1{
-    font-size: 30px;
+    font-size: 5vw;
 }
 
 h1, p, label{
@@ -139,23 +143,94 @@ p{
     letter-spacing: 1px;
 }
 
-.column-2{
-    float: left;
-    width: 50%;
-    padding-top: 5%;
-    height: 425px;
-    background-color: rgba(63, 74, 60, .9);
-}
-
-.column-tall{
+.tall{
     padding-top: 3%;
-    height: 500px;
+    height: 700px;
+    padding-bottom: 3%;
 }
 
-.img-brian{
-    border-radius: 10em / 20em;
-    box-shadow: black;
+/* Slideshow */
+
+.mySlides {
+    display: none;
 }
+
+#slideshow-container {
+   height: 75%;
+   width: 75%;
+   position: relative;
+   margin: auto;
+}
+
+.slideshow-images {
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.previous, .next{
+    cursor: pointer;
+    position: absolute;
+    bottom: 10%;
+    width: auto;
+    user-select: none;
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+
+.next{
+    right: 0;
+}
+
+.previous:hover, .next:hover{
+    color: wheat;
+}
+
+.image-text {
+    position: relative;
+    bottom: 0;
+    padding: 1vw;
+    width: 100%;
+    text-align: center;
+    font-family: "Merriweather", serif;
+    color: wheat;
+    background-color: rgba(63, 74, 60, .8);
+    border-radius: 15px;
+    user-select: none;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 2;
+}
+
+.active, .dot:hover {
+    background-color: black;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+/* Rest of page */
 
 .row:after{
     content: "";
@@ -167,7 +242,7 @@ p{
     text-align: center;
 }
 
-img{
+.logo-img{
     max-width: 100%;
     height: 300px;
     display: block;
@@ -175,7 +250,7 @@ img{
     margin-right: auto;
 }
 
-img:hover{
+.logo-img:hover{
     transition: transform 1s;
     transform: scale(1.05);
 }
@@ -186,10 +261,6 @@ img:hover{
         margin-top: 150px;
     }
 
-    .img-brian{
-        height: 100px;
-        margin-top: 150px;
-    }
 
     .Navbar a{
         width: 25%; /* This makes each link take up 1/4 of the navbar */
@@ -203,7 +274,51 @@ img:hover{
 
 /****CONTACT FORM****/
 
-input[type=text], textarea {
+/* Button used to open the contact form - fixed at the bottom of the page */
+ .open-button {
+    background-color: rgba(33,54,28,1);
+    color: white;
+    font-weight: 500;
+    font-family: "Merriweather", serif;
+    font-size: 1.2vw;
+    border: 2px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    position: fixed;
+    right: 0vw;
+    top: 10vw;
+    width: 2vw;
+    height: 3vw;
+    z-index:9;
+ } 
+
+ .open-button:hover{
+    background-color: wheat;
+    color: #21361c;
+    transition: 2s;
+ }
+
+  .form-popup {
+    display: none;
+    position:fixed;
+    top: 10vw;
+    right: 0vw;
+    z-index: 10;
+    width: 25vw;
+    border-radius: 20px;
+    box-shadow:0 0 15px black ;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 25vw;
+    padding: 10px;
+    background-color: rgba(33,54,28,1);
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+input[type=text], input[type=email], input[type=tel], textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #386c5f ;
@@ -211,16 +326,20 @@ input[type=text], textarea {
     box-sizing: border-box;
     margin-top: 8px;
     margin-bottom: 8px;
-    resize: vertical;
 }
 
-input[type=text]:hover, textarea:hover{
+textarea{
+    resize: none;
+    height: 150px;
+}    
+
+input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, textarea:hover{
     box-shadow: 0 0 5px #21361c inset;
 }
 
 /*SUBMIT BUTTON*/
-input[type=submit] {
-    background-color: rgba(33,54,28,1);
+input[type=submit], button[type=button] {
+    background-color: #386c5f;
     color: white;
     font-weight: 500;
     padding: 12px 20px;
@@ -231,12 +350,14 @@ input[type=submit] {
     margin-left: auto;
     margin-right: auto;
     font-size: 18px;
+    width: 100px;
+    
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover, button[type=button]:hover {
     background-color: wheat;
     color: #21361c;
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: 2s;
 }
 
@@ -246,8 +367,10 @@ form {
 
 
 footer{
-    margin: 0px -15px -15px -15px;
+    width: 100%;
+    height: 100%;
     border-top: 5px solid #21361c;
+    position: relative;
 
 }
 

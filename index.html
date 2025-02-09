@@ -1,88 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--HEAD-->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-sclae=1">
-        <title>Brian Lucas</title>
-        <link rel="stylesheet" type="text/css" href="css/css-portfolio.css">
-    </head> 
+<!--HEAD-->
 
-    <!--BODY-->
-    <body>
-        <!--NAVBAR-->
-        <nav class="navbar">
-            <ul>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#github">GitHub</a>
-                <a href="#contact">Contact</a>
-            </ul>
-        </nav>
-        <div class="nameBL-container" id="home">
-            <div class="nameBL">
-                <h2>Brian Lucas</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-sclae=1">
+    <title>Brian Lucas</title>
+    <link rel="stylesheet" type="text/css" href="css/css-portfolio.css">
+</head>
+
+<!--BODY-->
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <ul>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#github">Socials</a>
+            <a href="#github">GitHub</a>
+            <div>           
+            <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
             </div>
+        </ul>
+    </nav>
+    <div class="nameBL-container" id="home">
+        <div class="nameBL">
+            <h2>Brian Lucas</h2>
         </div>
-        <!--ABOUT-->
-        <section>
-            <div class="row" id="about">
-                <!--LEFT COLUMN-->
-                <div class="column-2">
-                    <img src="images/brian.jpeg" class="img-brian">
+    </div>
+    <!--ABOUT-->
+    <section>
+        <div class="row" id="about">
+            <!--LEFT COLUMN-->
+            <div class="column-1">
+                <div id="slideshow-container">
+                    <div class="mySlides fade">
+                        <img class="slideshow-images" src="images/brian.jpeg" alt="A picture of Brian Lucas">
+                        <div class="image-text">Here to assist you on your next project</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="slideshow-images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="A picture of Brian Lucas">
+                        <div class="image-text">I am trained in HTML, CSS, and JavaScript</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="slideshow-images" src="images/SQL_and_Database.jpg" alt="A picture of Brian Lucas">
+                        <div class="image-text">back end development, databases and SQL</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="slideshow-images" src="images/pexels-padrinan-1591062.jpg" alt="A picture of Brian Lucas">
+                        <div class="image-text"><a onclick="openForm()">Feel free to reach out</a></div>
+                    </div>
+                    <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <br>
+                    <div style="text-align: center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                    </div>
                 </div>
-                <div class="column-1">
-                    <h1 class="center">About</h1>
-                    <p>
-                        I've spent 15 years in the craft cocktail scene and I am now applying those selft taught skills and work ethic to the cyber security world and front end development. Currently enrolled at The Tech Academy. Always learning, eating, and exploring. A father to two curious minds.
-                    </p>
-                </div> 
-            </div>
-            <!--GitHub-->
-            <div class="row" id="github">
-                <!--LEFT COLUMN-->
-                <div class="column-1">
-                    <h1 class="center">GitHub</h1>
-                    <p>
-                        A repository of all of the projects that I've done and am currently working on while attending The Tech Academy 
-                    </p>
-                </div>
-                <!--RIGHT COLUMN-->
-                <div class="column-2">
-                    <a href="https://github.com/B-Lucas20?tab=repositories" target="_blank"><img src="images/githubimage.png"></a>
-                </div>
-            </div>
-            <!--CONTACT-->
-            <div class="row" id="contact">
-                <!--LEFT COLUMN-->
-                <div class="column-2 column-tall">
-                    <h1 class="center">Socials</h1>
-                    <a href="https://www.linkedin.com/in/brian-lucas-687455200/" target="_blank"><img src="images/logo-linkedin.svg"></a>
 
-                </div>
-                <!--RIGHT COLUMN-->
-                <div class="column-1 column-tall">
-                    <h1 class="center">Contact</h1>
-                    <form action="" method="post">
-                        <label>Name:</label>
-                            <input type="text" placeholder="Please enter your name">
-                        <label>Email:</label>
-                            <input type="text" id="email" name="email" placeholder="Please enter your email">
-                        <label>Message:</label>
-                            <textarea type="text" id="message" name="message" placeholder="Leave me a message!"></textarea>
-                            <input type="submit" value="SUBMIT">
-                    </form>
-                </div>
             </div>
-        </section>
-        <!--FOOTER-->
-        <footer>
-            <div class="footer">
-                <p id="footer-p">
-                    &copy;Brian Lucas
+            <div class="column-1">
+                <h1 class="center">About</h1>
+                <p>
+                    I've spent 15 years bartending in the craft cocktail scene and I am now applying those self taught
+                    skills and work ethic to the cyber security world and front end development. Currently enrolled at
+                    The Tech Academy. Always learning, eating, and exploring. A husband and a father to two curious
+                    minds.
                 </p>
             </div>
-        </footer>
-    </body>    
+        </div>
+        <!--GitHub-->
+        <div class="row" id="github">
+            <!--LEFT COLUMN-->
+            <div class="column-1 tall">
+                <h1 class="center">Socials</h1>
+                <a href="https://www.linkedin.com/in/brian-lucas-687455200/" target="_blank">
+                    <img class="logo-img" src="images/logo-linkedin.svg" alt="LinkedIn logo"></a>
+
+            </div>
+            <!--RIGHT COLUMN-->
+            <div class="column-1 tall">
+                <h1 class="center">Github</h1>
+                <a href="https://github.com/B-Lucas20?tab=repositories" target="_blank">
+                    <img class="logo-img" src="images/githubimage.png" alt="Github logo"></a><br>
+                <p>
+                    A repository of all of the projects that I've done and am currently working on while attending The
+                    Tech Academy
+                </p>
+            </div>
+        </div>
+        <!--CONTACT-->
+        <button onclick="openForm()" class="open-button">&mapstoleft;</button>
+        <div class="form-popup" id="myFormPop">
+            <form name="myForm" action="/action_page.php" onsubmit="validateForm()" method="post"
+                class="form-container">
+                <label>Name:</label>
+                <input type="text" name="fname" placeholder="Please enter your name">
+                <label>Email:</label>
+                <input type="email" id="email" name="email" placeholder="Please enter your email">
+                <label>Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    placeholder="555-555-5555">
+                <label>Message:</label>
+                <textarea type="text" id="message" name="message" placeholder="Leave me a message!"></textarea>
+                <input type="submit" value="SUBMIT"><br>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+            </form>
+        </div>
+    </section>
+    <!--FOOTER-->
+    <footer>
+        <div class="footer">
+            <p id="footer-p">
+                &copy;Brian Lucas<br>
+                <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
+            </p>
+          
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
 
 </html>
